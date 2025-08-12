@@ -23,6 +23,9 @@ importers:
       drizzle-orm:
         specifier: ^0.44.4
         version: 0.44.4(@libsql/client@0.15.10)(kysely@0.28.5)
+      jiti:
+        specifier: ^2.5.1
+        version: 2.5.1
       next:
         specifier: 15.4.6
         version: 15.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
