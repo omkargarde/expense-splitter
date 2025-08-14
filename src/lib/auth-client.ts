@@ -1,0 +1,12 @@
+import { createAuthClient } from 'better-auth/react';
+export const authClient = createAuthClient({
+  /** The base URL of the server (optional if you're using the same domain) */
+  baseURL: 'http://localhost:3000',
+});
+
+// TODO: remove if not needed
+// export const signIn = async () => {
+//   const data = await authClient.signIn.social({
+//     provider: 'github',
+//   });
+// };
