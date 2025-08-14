@@ -36,5 +36,5 @@
 		"source.organizeImports.biome": "explicit"
 	},
 	"eslint.enable": false,
-	"cSpell.words": ["libsql"]
+	"cSpell.words": ["libsql", "Pictogrammers"]
 }

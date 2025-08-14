@@ -7,6 +7,49 @@ export const usersTable = sqliteTable('users_table', {
   email: text().notNull().unique(),
 });
 
+export const groups = sqliteTable('groups', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  name: text('name').notNull(),
+  createdAt: text('created_at').notNull(),
+});
+
+export const groupMembers = sqliteTable('group_members', {
+  groupId: integer('group_id')
+    .references(() => groups.id)
+    .notNull(),
+  userId: integer('user_id')
+    .references(() => user.id)
+    .notNull(),
+});
+
+export const expenses = sqliteTable('expenses', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  groupId: integer('group_id')
+    .references(() => groups.id)
+    .notNull(),
+  paidById: integer('paid_by_id')
+    .references(() => user.id)
+    .notNull(), // Who paid
+  description: text('description').notNull(),
+  amount: integer('amount').notNull(), // Store in cents to avoid floating-point issues
+  createdAt: text('created_at').notNull(),
+});
+
+export const expenseSplits = sqliteTable('expense_splits', {
+  expenseId: integer('expense_id')
+    .references(() => expenses.id)
+    .notNull(),
+  userId: integer('user_id')
+    .references(() => user.id)
+    .notNull(),
+  amountOwed: integer('amount_owed').notNull(), // Store in cents
+});
+
+/*
+##########################################################################################################
+Better Auth Tables
+##########################################################################################################
+*/
 export const user = sqliteTable('user', {
   id: text('id').primaryKey(),
   name: text('name').notNull(),

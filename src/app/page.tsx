@@ -1,5 +1,5 @@
-import { GitHubSignIn } from '@/component/GitHubSignIn';
+import SignIn from '@/component/SignIn';
 
 export default function Home() {
-  return <GitHubSignIn />;
+  return <SignIn />;
 }
