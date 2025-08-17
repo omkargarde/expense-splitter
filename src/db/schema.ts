@@ -1,23 +1,20 @@
-import { int, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-export const usersTable = sqliteTable('users_table', {
-  id: int().primaryKey({ autoIncrement: true }),
-  name: text().notNull(),
-  age: int().notNull(),
-  email: text().notNull().unique(),
-});
+
 
 export const groups = sqliteTable('groups', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   name: text('name').notNull(),
-  createdAt: text('created_at').notNull(),
+  createdAt: integer('created_at', { mode: 'timestamp' })
+    .$defaultFn(() => /* @__PURE__ */ new Date())
+    .notNull(),
 });
 
 export const groupMembers = sqliteTable('group_members', {
   groupId: integer('group_id')
     .references(() => groups.id)
     .notNull(),
-  userId: integer('user_id')
+  userId: text('user_id')
     .references(() => user.id)
     .notNull(),
 });
