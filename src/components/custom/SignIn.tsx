@@ -24,7 +24,7 @@ export default function SignIn() {
     setLoading(false);
   }
 
-  const signInButtonText = (
+  const signInButtonContent = (
     <>
       <svg
         height="1em"
@@ -64,7 +64,7 @@ export default function SignIn() {
               onClick={signInHandler}
               variant="outline"
             >
-              {loading ? <span>Loading...</span> : signInButtonText}
+              {loading ? <span>Loading...</span> : signInButtonContent}
             </Button>
           </div>
         </div>

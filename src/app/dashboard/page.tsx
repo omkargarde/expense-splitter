@@ -16,7 +16,7 @@ export default async function DashboardPage() {
             <Link href="/dashboard/create-group">Create Group</Link>
           </li>
           <li>
-            <Link href="/dashboard/manage-groups">Manage Groups</Link>
+            <Link href="/dashboard/create-group">Manage Groups</Link>
           </li>
         </ul>
       </nav>

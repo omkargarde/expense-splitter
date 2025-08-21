@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "pnpm dlx ultracite format",
     "db:p": "npx drizzle-kit push",
     "db:g": "npx drizzle-kit generate",
     "db:m": "npx drizzle-kit migrate",
@@ -14,39 +15,45 @@
     "db:se": "npx tsx src/db/index.ts"
   },
   "dependencies": {
-    "@libsql/client": "^0.15.10",
+    "@libsql/client": "^0.15.12",
     "@radix-ui/react-checkbox": "^1.3.3",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@t3-oss/env-nextjs": "^0.13.8",
-    "better-auth": "^1.3.6",
+    "better-auth": "^1.3.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.1",
     "drizzle-orm": "^0.44.4",
     "lucide-react": "^0.539.0",
-    "next": "15.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "next": "15.5.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.0.17"
   },
   "devDependencies": {
-    "babel-plugin-react-compiler": "19.1.0-rc.2",
     "@biomejs/biome": "2.1.2",
-    "@tailwindcss/postcss": "^4.1.11",
-    "@types/node": "^20.19.10",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/node": "^20.19.11",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "babel-plugin-react-compiler": "19.1.0-rc.2",
     "drizzle-kit": "^0.31.4",
     "husky": "^9.1.7",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.1.12",
     "tsx": "^4.20.4",
-    "tw-animate-css": "^1.3.6",
+    "tw-animate-css": "^1.3.7",
     "typescript": "^5.9.2",
     "ultracite": "5.1.2"
   },
   "trustedDependencies": [
     "@tailwindcss/oxide"
-  ]
+  ],
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.1.10",
+      "@types/react-dom": "19.1.7"
+    }
+  }
 }
