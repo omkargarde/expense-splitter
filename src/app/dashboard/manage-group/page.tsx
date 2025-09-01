@@ -1,9 +1,14 @@
 import { Label } from '@radix-ui/react-label';
 import Link from 'next/link';
+import z from "zod";
 import { SignOut } from '@/components/custom/SignOut';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import getSession from '@/lib/auth/getSession';
+
+const _groupSchema = z.object({
+	groupName: z.email(),
+});
 
 export default async function ManageGroupPage() {
   const session = await getSession();

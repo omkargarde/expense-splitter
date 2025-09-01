@@ -15,12 +15,14 @@ import { Input } from '@/components/ui/input';
 import { db } from '@/db';
 import { groupMembers, groups } from '@/db/schema';
 import getSession from '@/lib/auth/getSession';
+import { redirect } from 'next/navigation';
 
 const groupSchema = z.object({
   groupName: z
     .string()
     .min(1, 'Group name is required')
-    .max(50, 'Group name must be at most 50 characters'),
+    .max(50, 'Group name must be at most 50 characters')
+    .trim(),
 });
 
 export default async function CreateGroupPage() {
@@ -49,7 +51,7 @@ export default async function CreateGroupPage() {
           groupId: newGroup.id,
           userId: session.session.userId,
         });
-      });
+      }).then(redirect(""));
     }
   }
 
