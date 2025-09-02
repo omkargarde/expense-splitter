@@ -4,15 +4,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import z from "zod";
 import { SignOut } from "@/components/custom/SignOut";
-import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { db } from "@/db";
 import { groupMembers, groups } from "@/db/schema";
 import getSession from "@/lib/auth/getSession";
@@ -99,17 +90,15 @@ export default async function CreateGroupPage() {
 					</p>
 				</div>
 
-				<Card className="border-0 bg-white/90 shadow-lg backdrop-blur-sm">
-					<CardHeader className="pb-6 text-center">
-						<CardTitle className="text-gray-900 text-xl">
-							Group Details
-						</CardTitle>
-						<CardDescription className="text-gray-600">
+				<section className="border-0 bg-white/90 shadow-lg backdrop-blur-sm">
+					<header className="pb-6 text-center">
+						<h2 className="text-gray-900 text-xl">Group Details</h2>
+						<p className="text-gray-600">
 							Give your group a memorable name that everyone will recognize
-						</CardDescription>
-					</CardHeader>
+						</p>
+					</header>
 
-					<CardContent>
+					<div>
 						<form action={formActionHandler} className="space-y-6">
 							<div className="space-y-2">
 								<Label
@@ -119,7 +108,7 @@ export default async function CreateGroupPage() {
 									<Users className="h-4 w-4" />
 									Group Name
 								</Label>
-								<Input
+								<input
 									className="h-12 border-gray-200 text-base focus:border-amber-400 focus:ring-amber-400/20"
 									id="groupName"
 									name="groupName"
@@ -134,17 +123,17 @@ export default async function CreateGroupPage() {
 							</div>
 
 							<div className="pt-4">
-								<Button
+								<button
 									className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-amber-600 font-medium text-white transition-colors hover:bg-amber-700"
 									type="submit"
 								>
 									<Plus className="h-4 w-4" />
 									Create Group
-								</Button>
+								</button>
 							</div>
 						</form>
-					</CardContent>
-				</Card>
+					</div>
+				</section>
 
 				{/* Additional Info */}
 				<div className="mt-8 text-center">

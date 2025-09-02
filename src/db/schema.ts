@@ -15,6 +15,7 @@ export const groupMembers = sqliteTable("group_members", {
 	userId: text("user_id")
 		.references(() => user.id)
 		.notNull(),
+	id: integer("id").primaryKey({ autoIncrement: true }),
 });
 
 export const expenses = sqliteTable("expenses", {
