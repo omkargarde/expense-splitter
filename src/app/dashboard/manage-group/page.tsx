@@ -93,19 +93,14 @@ export default async function ManageGroupPage() {
 
 	return (
 		<main>
-			<h1 className="capitalize">Welcome {session.user.name}</h1>
+			<h1>Welcome {session.user.name}</h1>
 			<p>Email: {session.user.email}</p>
 			<SignOut />
 			<Link href="/dashboard">Dashboard</Link>
-			<form action={formActionHandler} className="space-y-4">
+			<form action={formActionHandler}>
 				<div>
 					<Label htmlFor="groupId">Select Group</Label>
-					<select
-						id="groupId"
-						name="groupId"
-						required
-						className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-					>
+					<select id="groupId" name="groupId" required>
 						<option value="">Choose a group...</option>
 						{existingGroups.map((group) => (
 							<option key={group.id} value={group.id}>
@@ -127,40 +122,26 @@ export default async function ManageGroupPage() {
 				<button type="submit">Add user to group</button>
 			</form>
 
-			<div className="mt-8">
-				<h2 className="text-xl font-semibold mb-4">Existing Groups</h2>
+			<div>
+				<h2>Existing Groups</h2>
 				{existingGroups.length === 0 ? (
-					<p className="text-gray-500">
-						No groups found. Create your first group!
-					</p>
+					<p>No groups found. Create your first group!</p>
 				) : (
-					<div className="space-y-2">
+					<div>
 						{groupsWithMembers.map((group) => (
-							<div
-								key={group.id}
-								className="p-4 border rounded-lg bg-white shadow-sm"
-							>
-								<h3 className="font-medium">{group.name}</h3>
-								<p className="text-sm text-gray-500">
-									Created: {new Date(group.createdAt).toLocaleDateString()}
-								</p>
-								<div className="mt-2">
-									<p className="text-sm font-medium text-gray-700">
-										Members ({group.members.length}):
-									</p>
+							<div key={group.id}>
+								<h3>{group.name}</h3>
+								<p>Created: {new Date(group.createdAt).toLocaleDateString()}</p>
+								<div>
+									<p>Members ({group.members.length}):</p>
 									{group.members.length === 0 ? (
-										<p className="text-sm text-gray-500">No members yet</p>
+										<p>No members yet</p>
 									) : (
-										<ul className="text-sm text-gray-600 mt-1">
+										<ul>
 											{group.members.map((member) => (
-												<li
-													key={member.userId}
-													className="flex justify-between"
-												>
+												<li key={member.userId}>
 													<span>{member.userName}</span>
-													<span className="text-gray-400">
-														{member.userEmail}
-													</span>
+													<span>{member.userEmail}</span>
 												</li>
 											))}
 										</ul>

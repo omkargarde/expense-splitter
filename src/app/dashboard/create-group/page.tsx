@@ -1,5 +1,5 @@
 import { Label } from "@radix-ui/react-label";
-import { ArrowLeft, Plus, Users } from "lucide-react";
+import { Plus, Users } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import z from "zod";
@@ -48,26 +48,20 @@ export default async function CreateGroupPage() {
 	}
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+		<div>
 			{/* Header */}
-			<header className="sticky top-0 z-10 border-amber-200 border-b bg-white/80 backdrop-blur-sm">
-				<div className="mx-auto max-w-4xl px-6 py-4">
-					<div className="flex items-center justify-between">
-						<div className="flex items-center gap-4">
-							<Link
-								className="flex items-center gap-2 text-amber-700 transition-colors hover:text-amber-900"
-								href="/dashboard"
-							>
-								<ArrowLeft className="h-4 w-4" />
-								<span className="font-medium">Back to Dashboard</span>
+			<header>
+				<div>
+					<div>
+						<div>
+							<Link href="/dashboard">
+								<span>Home</span>
 							</Link>
 						</div>
-						<div className="flex items-center gap-4">
-							<div className="text-right">
-								<p className="font-medium text-gray-900 text-sm">
-									{session.user.name}
-								</p>
-								<p className="text-gray-600 text-xs">{session.user.email}</p>
+						<div>
+							<div>
+								<p>{session.user.name}</p>
+								<p>{session.user.email}</p>
 							</div>
 							<SignOut />
 						</div>
@@ -76,58 +70,47 @@ export default async function CreateGroupPage() {
 			</header>
 
 			{/* Main Content */}
-			<main className="mx-auto max-w-2xl px-6 py-12">
-				<div className="mb-8 text-center">
-					<div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-amber-100">
-						<Users className="h-8 w-8 text-amber-600" />
+			<main>
+				<div>
+					<div>
+						<Users />
 					</div>
-					<h1 className="mb-2 font-bold text-3xl text-gray-900">
-						Create New Group
-					</h1>
-					<p className="mx-auto max-w-md text-gray-600">
+					<h1>Create New Group</h1>
+					<p>
 						Start a new expense group to track shared costs with friends,
 						family, or colleagues.
 					</p>
 				</div>
 
-				<section className="border-0 bg-white/90 shadow-lg backdrop-blur-sm">
-					<header className="pb-6 text-center">
-						<h2 className="text-gray-900 text-xl">Group Details</h2>
-						<p className="text-gray-600">
-							Give your group a memorable name that everyone will recognize
-						</p>
+				<section>
+					<header>
+						<h2>Group Details</h2>
+						<p>Give your group a memorable name that everyone will recognize</p>
 					</header>
 
 					<div>
-						<form action={formActionHandler} className="space-y-6">
-							<div className="space-y-2">
-								<Label
-									className="flex items-center gap-2 font-medium text-gray-700 text-sm"
-									htmlFor="groupName"
-								>
-									<Users className="h-4 w-4" />
+						<form action={formActionHandler}>
+							<div>
+								<Label htmlFor="groupName">
+									<Users />
 									Group Name
 								</Label>
 								<input
-									className="h-12 border-gray-200 text-base focus:border-amber-400 focus:ring-amber-400/20"
 									id="groupName"
 									name="groupName"
 									placeholder="e.g., Weekend Trip, Roommates, Office Lunch"
 									required
 									type="text"
 								/>
-								<p className="mt-1 text-gray-500 text-xs">
+								<p>
 									Choose a name that describes what you'll be splitting expenses
 									for
 								</p>
 							</div>
 
-							<div className="pt-4">
-								<button
-									className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-amber-600 font-medium text-white transition-colors hover:bg-amber-700"
-									type="submit"
-								>
-									<Plus className="h-4 w-4" />
+							<div>
+								<button type="submit">
+									<Plus />
 									Create Group
 								</button>
 							</div>
@@ -136,8 +119,8 @@ export default async function CreateGroupPage() {
 				</section>
 
 				{/* Additional Info */}
-				<div className="mt-8 text-center">
-					<p className="text-gray-500 text-sm">
+				<div>
+					<p>
 						After creating your group, you'll be able to invite members and
 						start adding expenses.
 					</p>

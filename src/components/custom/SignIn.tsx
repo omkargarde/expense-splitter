@@ -43,15 +43,15 @@ export default function SignIn() {
   );
 
   return (
-    <Card className="max-w-md">
+    <Card >
       <CardHeader>
-        <CardTitle className="text-lg md:text-xl">Sign In</CardTitle>
-        <CardDescription className="text-xs md:text-sm">
+        <CardTitle >Sign In</CardTitle>
+        <CardDescription >
           Enter your email below to login to your account
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-4">
+        <div >
           <div
             className={cn(
               'flex w-full items-center gap-2',
@@ -59,7 +59,7 @@ export default function SignIn() {
             )}
           >
             <Button
-              className={cn('w-full gap-2')}
+              
               disabled={loading}
               onClick={signInHandler}
               variant="outline"
