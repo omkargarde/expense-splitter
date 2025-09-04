@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
 import { authClient } from "@/lib/auth/auth-client";
 
 export default function SignIn() {
@@ -17,7 +16,7 @@ export default function SignIn() {
 	}
 
 	return (
-		<section>
+		<section className="card">
 			<header>
 				<h2>Sign In</h2>
 				<p>Enter your email below to login to your account</p>
