@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "bunx ultracite format",
-    "db:p": "bunx drizzle-kit push",
-    "db:g": "bunx drizzle-kit generate",
-    "db:m": "bunx drizzle-kit migrate",
-    "db:st": "bunx drizzle-kit studio",
-    "db:se": "bunx tsx src/db/index.ts"
+    "format": "npx ultracite format",
+    "db:p": "npx drizzle-kit push",
+    "db:g": "npx drizzle-kit generate",
+    "db:m": "npx drizzle-kit migrate",
+    "db:st": "npx drizzle-kit studio",
+    "db:se": "npx tsx src/db/index.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.15.14",
