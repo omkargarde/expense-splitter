@@ -1,4 +1,3 @@
-import { Label } from "@radix-ui/react-label";
 import { and, eq } from "drizzle-orm";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -99,7 +98,7 @@ export default async function ManageGroupPage() {
 			<Link href="/dashboard">Dashboard</Link>
 			<form action={formActionHandler} className="space-y-4">
 				<div>
-					<Label htmlFor="groupId">Select Group</Label>
+					<label htmlFor="groupId">Select Group</label>
 					<select
 						id="groupId"
 						name="groupId"
@@ -115,7 +114,7 @@ export default async function ManageGroupPage() {
 					</select>
 				</div>
 				<div>
-					<Label htmlFor="userEmail">Enter email of the user to add</Label>
+					<label htmlFor="userEmail">Enter email of the user to add</label>
 					<input
 						id="userEmail"
 						name="userEmail"

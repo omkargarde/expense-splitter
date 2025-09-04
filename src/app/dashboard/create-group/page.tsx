@@ -1,4 +1,3 @@
-import { Label } from "@radix-ui/react-label";
 import { ArrowLeft, Plus, Users } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -101,13 +100,13 @@ export default async function CreateGroupPage() {
 					<div>
 						<form action={formActionHandler} className="space-y-6">
 							<div className="space-y-2">
-								<Label
+								<label
 									className="flex items-center gap-2 font-medium text-gray-700 text-sm"
 									htmlFor="groupName"
 								>
 									<Users className="h-4 w-4" />
 									Group Name
-								</Label>
+								</label>
 								<input
 									className="h-12 border-gray-200 text-base focus:border-amber-400 focus:ring-amber-400/20"
 									id="groupName"
