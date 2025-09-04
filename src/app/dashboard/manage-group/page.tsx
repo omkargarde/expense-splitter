@@ -99,12 +99,7 @@ export default async function ManageGroupPage() {
 			<form action={formActionHandler}>
 				<div>
 					<label htmlFor="groupId">Select Group</label>
-					<select
-						id="groupId"
-						name="groupId"
-						required
-						className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-					>
+					<select id="groupId" name="groupId" required>
 						<option value="">Choose a group...</option>
 						{existingGroups.map((group) => (
 							<option key={group.id} value={group.id}>

@@ -88,13 +88,10 @@ export default async function CreateGroupPage() {
 					</header>
 
 					<div>
-						<form action={formActionHandler} className="space-y-6">
-							<div className="space-y-2">
-								<label
-									className="flex items-center gap-2 font-medium text-gray-700 text-sm"
-									htmlFor="groupName"
-								>
-									<Users className="h-4 w-4" />
+						<form action={formActionHandler}>
+							<div>
+								<label htmlFor="groupName">
+									<Users />
 									Group Name
 								</label>
 								<input

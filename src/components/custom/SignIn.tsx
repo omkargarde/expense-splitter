@@ -17,12 +17,10 @@ export default function SignIn() {
 	}
 
 	return (
-		<section className="max-w-md">
+		<section>
 			<header>
-				<h2 className="text-lg md:text-xl">Sign In</h2>
-				<p className="text-xs md:text-sm">
-					Enter your email below to login to your account
-				</p>
+				<h2>Sign In</h2>
+				<p>Enter your email below to login to your account</p>
 			</header>
 			<div>
 				<div>
